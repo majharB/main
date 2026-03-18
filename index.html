@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Majhar Babor, PhD | Data Science in Bioeconomy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg:       #f5f0e8;
+    --bg2:      #ede7d9;
+    --bg3:      #e4ddd0;
+    --card:     #faf7f2;
+    --green:    #2d5a3d;
+    --green2:   #4a8a5f;
+    --green3:   #6aab80;
+    --amber:    #b5852a;
+    --text:     #1e2417;
+    --muted:    #5a6152;
+    --border:   rgba(45,90,61,0.15);
+    --shadow:   rgba(45,90,61,0.08);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Outfit',sans-serif;
+    overflow-x:hidden;
+  }
+
+  /* ── TEXTURE OVERLAY ── */
+  body::before{
+    content:'';
+    position:fixed;top:0;left:0;right:0;bottom:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events:none;z-index:0;opacity:0.5;
+  }
+
+  ::-webkit-scrollbar{width:5px;}
+  ::-webkit-scrollbar-track{background:var(--bg2);}
+  ::-webkit-scrollbar-thumb{background:var(--green);border-radius:3px;}
+
+  /* ── NAV ── */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:200;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:1.1rem 5rem;
+    background:rgba(245,240,232,0.9);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+    transition:all .3s;
+  }
+  .nav-logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.25rem;font-weight:600;
+    color:var(--green);letter-spacing:.4px;
+  }
+  .nav-links{display:flex;gap:2.2rem;list-style:none;}
+  .nav-links a{
+    color:var(--muted);text-decoration:none;
+    font-size:.8rem;font-weight:500;
+    letter-spacing:.9px;text-transform:uppercase;
+    transition:color .2s;position:relative;
+  }
+  .nav-links a::after{
+    content:'';position:absolute;bottom:-3px;left:0;
+    width:0;height:1.5px;background:var(--green);
+    transition:width .3s;
+  }
+  .nav-links a:hover{color:var(--green);}
+  .nav-links a:hover::after{width:100%;}
+
+  /* ── HERO ── */
+  #hero{
+    position:relative;z-index:1;
+    min-height:100vh;display:flex;align-items:center;
+    padding:0 5rem;overflow:hidden;
+  }
+  .hero-bg-orb{
+    position:absolute;
+    border-radius:50%;filter:blur(80px);pointer-events:none;
+    animation:orbFloat 8s ease-in-out infinite alternate;
+  }
+  .orb1{width:500px;height:500px;background:rgba(45,90,61,0.07);top:-80px;right:-80px;}
+  .orb2{width:350px;height:350px;background:rgba(181,133,42,0.06);bottom:50px;left:30%;animation-delay:2s;}
+  @keyframes orbFloat{from{transform:translateY(0) scale(1);}to{transform:translateY(-30px) scale(1.05);}}
+
+  .hero-inner{max-width:700px;}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:.6rem;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.72rem;color:var(--green2);
+    letter-spacing:2px;text-transform:uppercase;
+    background:rgba(45,90,61,0.08);border:1px solid var(--border);
+    padding:.35rem .9rem;border-radius:100px;
+    margin-bottom:1.8rem;
+    opacity:0;animation:fadeUp .7s .2s forwards;
+  }
+  .hero-tag .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--green3);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.7);}}
+
+  .hero-name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(3rem,6.5vw,5.5rem);
+    font-weight:700;line-height:1.02;
+    margin-bottom:.6rem;
+    opacity:0;animation:fadeUp .7s .4s forwards;
+  }
+  .hero-name em{font-style:normal;color:var(--green);}
+  .hero-role{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.35rem;color:var(--amber);
+    font-weight:500;margin-bottom:.6rem;
+    opacity:0;animation:fadeUp .7s .55s forwards;
+  }
+  .hero-inst{
+    font-size:.9rem;color:var(--muted);margin-bottom:2rem;
+    opacity:0;animation:fadeUp .7s .65s forwards;
+  }
+  .hero-desc{
+    font-size:1rem;color:var(--muted);line-height:1.85;
+    max-width:580px;margin-bottom:2.5rem;
+    opacity:0;animation:fadeUp .7s .75s forwards;
+  }
+  .hero-chips{
+    display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:2.5rem;
+    opacity:0;animation:fadeUp .7s .85s forwards;
+  }
+  .chip{
+    padding:.3rem .85rem;border:1px solid var(--border);
+    border-radius:100px;font-size:.74rem;color:var(--green);
+    background:rgba(45,90,61,0.06);font-family:'JetBrains Mono',monospace;
+    transition:all .25s;cursor:default;
+  }
+  .chip:hover{background:rgba(45,90,61,0.14);border-color:var(--green);}
+
+  .hero-cta{
+    display:flex;gap:1rem;flex-wrap:wrap;
+    opacity:0;animation:fadeUp .7s .95s forwards;
+  }
+  .btn{
+    padding:.72rem 1.9rem;border-radius:5px;
+    font-size:.85rem;font-weight:500;text-decoration:none;
+    transition:all .25s;cursor:pointer;letter-spacing:.2px;
+  }
+  .btn-primary{
+    background:var(--green);color:#fff;border:1.5px solid var(--green);
+  }
+  .btn-primary:hover{background:var(--green2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(45,90,61,.22);}
+  .btn-outline{
+    background:transparent;color:var(--green);border:1.5px solid var(--border);
+  }
+  .btn-outline:hover{border-color:var(--green);transform:translateY(-2px);}
+
+  /* ── SECTION TEMPLATE ── */
+  section{position:relative;z-index:1;padding:6rem 5rem;max-width:1200px;margin:0 auto;}
+  .sec-label{
+    font-family:'JetBrains Mono',monospace;font-size:.7rem;
+    color:var(--green2);letter-spacing:3px;text-transform:uppercase;
+    margin-bottom:.7rem;display:flex;align-items:center;gap:.7rem;
+  }
+  .sec-label::before{content:'';display:block;width:28px;height:1.5px;background:var(--green);}
+  .sec-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1.9rem,3.5vw,2.9rem);
+    font-weight:600;line-height:1.15;margin-bottom:.8rem;
+  }
+  .sec-divider{
+    width:50px;height:2px;
+    background:linear-gradient(90deg,var(--green),var(--amber));
+    border-radius:2px;margin-bottom:3rem;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4.5rem;align-items:center;}
+  .about-text p{
+    color:var(--muted);line-height:1.9;margin-bottom:1.1rem;font-size:.97rem;
+  }
+  .about-text strong{color:var(--text);}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+  .stat-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:10px;padding:1.6rem 1.4rem;text-align:center;
+    transition:all .3s;box-shadow:0 2px 12px var(--shadow);
+  }
+  .stat-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px var(--shadow);border-color:var(--green3);}
+  .stat-num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:2.4rem;font-weight:700;color:var(--green);line-height:1;
+    margin-bottom:.35rem;
+  }
+  .stat-lbl{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px;}
+
+  /* ── RESEARCH PROSPECTS ── */
+  #prospects{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  #prospects section{max-width:1200px;margin:0 auto;}
+  .prospects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .prospect-card{
+    background:var(--card);border:1px solid var(--border);border-radius:12px;
+    padding:2rem 1.8rem;transition:all .35s;position:relative;overflow:hidden;
+    box-shadow:0 2px 16px var(--shadow);cursor:default;
+  }
+  .prospect-card::after{
+    content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--green),var(--amber));
+    transform:scaleX(0);transform-origin:left;transition:transform .4s;
+  }
+  .prospect-card:hover{transform:translateY(-7px);box-shadow:0 20px 50px var(--shadow);border-color:var(--green3);}
+  .prospect-card:hover::after{transform:scaleX(1);}
+
+  .prospect-icon{
+    font-size:2.4rem;margin-bottom:1.3rem;display:block;
+    transition:transform .4s;
+  }
+  .prospect-card:hover .prospect-icon{transform:scale(1.15) rotate(-5deg);}
+
+  .icon-wrap{
+    width:60px;height:60px;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.8rem;margin-bottom:1.3rem;
+    background:rgba(45,90,61,0.08);border:1px solid var(--border);
+    position:relative;overflow:hidden;
+    transition:all .4s;
+  }
+  .prospect-card:hover .icon-wrap{
+    background:rgba(45,90,61,0.14);border-color:var(--green3);
+    box-shadow:0 0 20px rgba(45,90,61,.2);
+  }
+  .icon-wrap::before{
+    content:'';position:absolute;inset:-50%;
+    background:conic-gradient(transparent,rgba(45,90,61,.12),transparent);
+    animation:iconSpin 4s linear infinite;opacity:0;
+    transition:opacity .4s;
+  }
+  .prospect-card:hover .icon-wrap::before{opacity:1;}
+  @keyframes iconSpin{to{transform:rotate(360deg);}}
+
+  .prospect-card h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.2rem;font-weight:600;margin-bottom:.7rem;color:var(--text);
+  }
+  .prospect-card p{font-size:.86rem;color:var(--muted);line-height:1.75;}
+  .prospect-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.1rem;}
+  .ptag{
+    font-family:'JetBrains Mono',monospace;font-size:.67rem;
+    padding:.18rem .55rem;background:rgba(45,90,61,.07);
+    border:1px solid var(--border);border-radius:3px;color:var(--green);
+  }
+
+  /* ── PUBLICATIONS ── */
+  .pub-controls{
+    display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem;
+  }
+  .pub-filter{
+    padding:.4rem 1rem;border-radius:100px;font-size:.78rem;
+    border:1px solid var(--border);background:transparent;
+    color:var(--muted);cursor:pointer;transition:all .2s;font-family:'Outfit',sans-serif;
+  }
+  .pub-filter:hover,.pub-filter.active{
+    background:var(--green);color:#fff;border-color:var(--green);
+  }
+  .pub-list{display:flex;flex-direction:column;gap:1rem;}
+  .pub-item{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:10px;padding:1.5rem 1.8rem;
+    display:grid;grid-template-columns:70px 1fr;gap:1.4rem;
+    align-items:start;transition:all .3s;
+    box-shadow:0 2px 8px var(--shadow);
+  }
+  .pub-item:hover{
+    border-color:var(--green3);transform:translateX(5px);
+    box-shadow:-4px 0 0 var(--green),4px 0 30px var(--shadow);
+  }
+  .pub-year{
+    font-family:'JetBrains Mono',monospace;font-size:.78rem;
+    color:var(--amber);font-weight:500;padding-top:4px;
+  }
+  .pub-title{font-size:.96rem;font-weight:500;color:var(--text);margin-bottom:.35rem;line-height:1.5;}
+  .pub-authors{font-size:.8rem;color:var(--muted);margin-bottom:.3rem;font-style:italic;}
+  .pub-venue{font-size:.8rem;color:var(--green2);margin-bottom:.5rem;font-weight:500;}
+  .pub-badge{
+    display:inline-block;font-size:.66rem;padding:.18rem .55rem;
+    border-radius:3px;font-family:'JetBrains Mono',monospace;
+    font-weight:500;text-transform:uppercase;letter-spacing:.5px;
+  }
+  .badge-journal{background:rgba(45,90,61,.1);color:var(--green);border:1px solid rgba(45,90,61,.2);}
+  .badge-preprint{background:rgba(181,133,42,.1);color:var(--amber);border:1px solid rgba(181,133,42,.25);}
+  .badge-conf{background:rgba(74,138,95,.1);color:var(--green2);border:1px solid rgba(74,138,95,.25);}
+
+  .pub-link{
+    font-size:.75rem;color:var(--green2);text-decoration:none;
+    display:inline-flex;align-items:center;gap:.3rem;margin-top:.5rem;
+    transition:color .2s;
+  }
+  .pub-link:hover{color:var(--green);}
+
+  /* ── EXPERIENCE ── */
+  .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+  .exp-card{
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    padding:1.8rem;transition:all .3s;
+    box-shadow:0 2px 10px var(--shadow);
+  }
+  .exp-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px var(--shadow);border-color:var(--green3);}
+  .exp-date{
+    font-family:'JetBrains Mono',monospace;font-size:.7rem;
+    color:var(--green2);letter-spacing:1px;margin-bottom:.5rem;
+  }
+  .exp-role{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.15rem;font-weight:600;margin-bottom:.25rem;
+  }
+  .exp-org{font-size:.85rem;color:var(--amber);margin-bottom:.9rem;font-weight:500;}
+  .exp-desc{font-size:.85rem;color:var(--muted);line-height:1.75;}
+
+  /* ── SKILLS ── */
+  .skills-cloud{display:flex;flex-wrap:wrap;gap:.8rem;}
+  .skill-pill{
+    padding:.5rem 1.1rem;border-radius:100px;
+    font-size:.84rem;font-weight:500;
+    border:1px solid var(--border);background:var(--card);
+    color:var(--text);transition:all .25s;cursor:default;
+    box-shadow:0 2px 6px var(--shadow);
+  }
+  .skill-pill:hover{
+    background:var(--green);color:#fff;border-color:var(--green);
+    transform:translateY(-3px);box-shadow:0 8px 22px rgba(45,90,61,.2);
+  }
+  .skill-pill.level-3{border-color:rgba(45,90,61,.3);}
+  .skill-pill.level-2{border-color:rgba(181,133,42,.25);}
+
+  /* ── CONTACT ── */
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:start;}
+  .contact-text p{color:var(--muted);line-height:1.85;font-size:.97rem;margin-bottom:1.5rem;}
+  .contact-links{display:flex;flex-direction:column;gap:.8rem;}
+  .clink{
+    display:flex;align-items:center;gap:1rem;color:var(--muted);
+    text-decoration:none;font-size:.9rem;padding:.8rem 1.1rem;
+    border-radius:8px;border:1px solid transparent;transition:all .25s;
+  }
+  .clink:hover{color:var(--green);background:rgba(45,90,61,.05);border-color:var(--border);}
+  .clink-icon{
+    width:38px;height:38px;border-radius:8px;
+    background:rgba(45,90,61,.08);border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.1rem;flex-shrink:0;transition:all .25s;
+  }
+  .clink:hover .clink-icon{background:var(--green);border-color:var(--green);}
+
+  .contact-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:12px;padding:2rem;
+    box-shadow:0 4px 20px var(--shadow);
+  }
+  .contact-card h4{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.4rem;margin-bottom:1.2rem;color:var(--text);
+  }
+  .avail-list{display:flex;flex-direction:column;gap:.8rem;}
+  .avail-item{
+    display:flex;align-items:flex-start;gap:.8rem;
+    font-size:.88rem;color:var(--muted);
+  }
+  .avail-dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--green3);flex-shrink:0;margin-top:5px;
+    animation:pulse 2.5s infinite;
+  }
+
+  /* ── FOOTER ── */
+  footer{
+    position:relative;z-index:1;
+    text-align:center;padding:2rem;
+    border-top:1px solid var(--border);
+    color:var(--muted);font-size:.78rem;
+    font-family:'JetBrains Mono',monospace;
+    background:var(--bg2);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(28px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  .reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal-left.visible{opacity:1;transform:translateX(0);}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:900px){
+    nav{padding:1rem 1.5rem;}
+    .nav-links{display:none;}
+    #hero,section{padding:4rem 1.5rem;}
+    .about-grid,.contact-grid,.exp-grid{grid-template-columns:1fr;gap:2rem;}
+    .prospects-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:560px){
+    .prospects-grid{grid-template-columns:1fr;}
+    #hero{padding:6rem 1.5rem 3rem;}
+  }
+
+  /* ── BACK TO TOP ── */
+  #topBtn{
+    position:fixed;bottom:2rem;right:2rem;z-index:200;
+    width:44px;height:44px;border-radius:50%;
+    background:var(--green);color:#fff;border:none;
+    font-size:1.1rem;cursor:pointer;
+    box-shadow:0 4px 16px rgba(45,90,61,.3);
+    opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;
+  }
+  #topBtn.show{opacity:1;pointer-events:all;}
+  #topBtn:hover{transform:translateY(-3px);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">Majhar Babor</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#prospects">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-bg-orb orb1"></div>
+  <div class="hero-bg-orb orb2"></div>
+  <div class="hero-inner">
+    <h1 class="hero-name">Majhar<br><em>Babor</em></h1>
+    <div class="hero-role">Data Science in Bioeconomy</div>
+    <div class="hero-inst">Leibniz Institute for Agricultural Engineering and Bioeconomy (ATB), Potsdam, Germany</div>
+    <p class="hero-desc">
+      I specialize in food and bioprocess analytics, monitoring, and decision-making evaluation — leveraging the power of AI for real-world sustainable applications. Driven to advance knowledge in sustainable resource consumption, creating positive impact on environment and industry.
+    </p>
+    <div class="hero-chips">
+      <span class="chip">Machine Learning</span>
+      <span class="chip">Bioprocess Monitoring</span>
+      <span class="chip">Operations Research</span>
+      <span class="chip">Food Manufacturing</span>
+      <span class="chip">Chemometrics</span>
+      <span class="chip">Digital Twins</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#publications" class="btn btn-primary">View Publications</a>
+      <a href="https://scholar.google.com/citations?user=-sM9QXkAAAAJ&hl=en" target="_blank" class="btn btn-outline">Google Scholar ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <p class="sec-label">01 — About</p>
+    <h2 class="sec-title">Who I Am</h2>
+    <div class="sec-divider"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal-left">
+      <p>
+        I am a <strong>Postdoctoral Researcher in Data Science in Bioeconomy</strong> at the Leibniz Institute for Agricultural Engineering and Bioeconomy (ATB) in Potsdam, Germany. My research sits at the intersection of artificial intelligence, bioprocess engineering, and sustainable production systems.
+      </p>
+      <p>
+        As a Scientific Researcher, I specialize in <strong>food and bioprocess analytics</strong>, monitoring, and decision-making evaluation techniques, leveraging the power of AI for real-world applications. My skills include <strong>machine learning, modeling, simulation, operations research</strong> and optimization of food manufacturing environments and biosystems.
+      </p>
+      <p>
+        I am driven to connect and explore opportunities for advancing knowledge in <strong>sustainable resource consumption</strong>, creating a positive impact on our Environment and Industry. With <span id="stat-pubs">many</span> publications, <span id="stat-cites">hundreds of</span> citations, and a strong readership, I contribute actively to advancing the bioeconomy research frontier.
+      </p>
+    </div>
+    <div class="stat-grid reveal">
+      <div class="stat-card">
+        <div class="stat-num" data-target="publications">0</div>
+        <div class="stat-lbl">Publications</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" data-target="citations">0</div>
+        <div class="stat-lbl">Citations</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" data-target="hindex">0</div>
+        <div class="stat-lbl">h‑index</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" data-target="i10index">0</div>
+        <div class="stat-lbl">i10‑index</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH PROSPECTS -->
+<div id="prospects">
+  <section>
+    <div class="reveal">
+      <p class="sec-label">02 — Research Prospects</p>
+      <h2 class="sec-title">Research Areas & Future Directions</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="prospects-grid">
+
+      <div class="prospect-card reveal">
+        <div class="icon-wrap">🧬</div>
+        <h3>AI-Driven Bioprocess Monitoring</h3>
+        <p>Developing next-generation real-time monitoring systems using fluorescence spectroscopy, machine learning, and transfer learning to eliminate costly offline sampling in fermentation processes.</p>
+        <div class="prospect-tags">
+          <span class="ptag">Fluorescence</span><span class="ptag">Transfer Learning</span><span class="ptag">Chemometrics</span>
+        </div>
+      </div>
+
+      <div class="prospect-card reveal">
+        <div class="icon-wrap">♻️</div>
+        <h3>Sustainable Biowaste Valorisation</h3>
+        <p>Transforming agricultural and food waste into valuable biochemicals — particularly lactic acid — through intelligent fermentation monitoring and domain-adaptive AI models for circular bioeconomy.</p>
+        <div class="prospect-tags">
+          <span class="ptag">Lactic Acid</span><span class="ptag">Domain Adaptation</span><span class="ptag">Biowaste</span>
+        </div>
+      </div>
+
+      <div class="prospect-card reveal">
+        <div class="icon-wrap">🏭</div>
+        <h3>Smart Food Manufacturing Optimization</h3>
+        <p>Applying operations research, evolutionary algorithms, and flow-shop scheduling models to reduce energy waste, minimize carbon emissions, and optimize production in SME bakeries and food plants.</p>
+        <div class="prospect-tags">
+          <span class="ptag">Scheduling</span><span class="ptag">MILP</span><span class="ptag">Energy Efficiency</span>
+        </div>
+      </div>
+
+      <div class="prospect-card reveal">
+        <div class="icon-wrap">☕</div>
+        <h3>Food Authenticity & Quality Analytics</h3>
+        <p>Building spectroscopy-based AI systems (NIR, Raman, 2D fluorescence) with explainable AI and vision transformers to detect food adulteration and ensure quality in coffee and other agricultural products.</p>
+        <div class="prospect-tags">
+          <span class="ptag">XAI</span><span class="ptag">NIR Spectroscopy</span><span class="ptag">Adulteration</span>
+        </div>
+      </div>
+
+      <div class="prospect-card reveal">
+        <div class="icon-wrap">🌐</div>
+        <h3>Digital Twins for Biosystems</h3>
+        <p>Creating physics-informed digital twin models that integrate mechanistic biochemical models with data-driven AI to simulate and optimize complex food drying, fermentation, and production systems.</p>
+        <div class="prospect-tags">
+          <span class="ptag">Digital Twin</span><span class="ptag">Modeling</span><span class="ptag">Simulation</span>
+        </div>
+      </div>
+
+      <div class="prospect-card reveal">
+        <div class="icon-wrap">🌱</div>
+        <h3>AI for Sustainable Bioeconomy</h3>
+        <p>Leveraging data science and machine learning across the entire bioeconomy value chain — from biomass production to biobased chemicals — to support evidence-based decision making for a greener economy.</p>
+        <div class="prospect-tags">
+          <span class="ptag">Bioeconomy</span><span class="ptag">Decision Support</span><span class="ptag">Sustainability</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="reveal">
+    <p class="sec-label">03 — Publications</p>
+    <h2 class="sec-title">Selected Publications</h2>
+    <div class="sec-divider"></div>
+  </div>
+  <div class="pub-controls reveal">
+    <button class="pub-filter active" data-filter="all">All</button>
+    <button class="pub-filter" data-filter="journal">Journal Articles</button>
+    <button class="pub-filter" data-filter="preprint">Preprints</button>
+    <button class="pub-filter" data-filter="food">Food Science</button>
+    <button class="pub-filter" data-filter="bioprocess">Bioprocess</button>
+    <button class="pub-filter" data-filter="optimization">Optimization</button>
+  </div>
+  <div class="pub-list" id="pub-list"></div>  <!-- will be filled by JavaScript -->
+  <div style="text-align:center;margin-top:2rem;" class="reveal">
+    <a href="https://scholar.google.com/citations?user=-sM9QXkAAAAJ&hl=en" target="_blank" class="btn btn-outline">View All on Google Scholar ↗</a>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:var(--bg2);max-width:100%;padding:6rem 0;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 5rem;">
+    <div class="reveal">
+      <p class="sec-label">04 — Experience</p>
+      <h2 class="sec-title">Academic & Research Journey</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card reveal">
+        <div class="exp-date">2023 — Present</div>
+        <div class="exp-role">Postdoctoral Researcher</div>
+        <div class="exp-org">Data Science in Bioeconomy · Leibniz Institute (ATB), Potsdam</div>
+        <div class="exp-desc">Research in AI-driven food and bioprocess monitoring, 
+          lactic acid fermentation analytics, and domain-adaptive machine learning for 
+          bio-waste valorisation. Contributing to Leibniz research programs.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-date">Research Focus</div>
+        <div class="exp-role">Scientific Collaboration</div>
+        <div class="exp-org">ATB Potsdam · University of Hohenheim · International Partners</div>
+        <div class="exp-desc">Collaborative projects in food authentication (NIR/Raman spectroscopy + XAI), digital twin development for food drying systems, and biodiversity monitoring via deep learning — with co-authors across Germany and internationally.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-date">Academic Service</div>
+        <div class="exp-role">Peer Reviewer & Mentor</div>
+        <div class="exp-org">LWT - Food Science and Technology · Results in engineering</div>
+        <div class="exp-desc">Active peer reviewer for leading journals in food science, chemometrics, and bioprocess engineering. 
+          Mentoring junior researchers in data science methodologies and ML applications in the life sciences.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="reveal">
+    <p class="sec-label">05 — Skills & Expertise</p>
+    <h2 class="sec-title">Technical Toolkit</h2>
+    <div class="sec-divider"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5rem;">
+    <div class="reveal">
+      <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:1rem;color:var(--green);">AI & Machine Learning</h4>
+      <div class="skills-cloud">
+        <span class="skill-pill level-3">Machine Learning</span>
+        <span class="skill-pill level-3">Deep Learning</span>
+        <span class="skill-pill level-3">Transfer Learning</span>
+        <span class="skill-pill level-3">Out-of-Distribution Generalization</span>
+        <span class="skill-pill level-3">Continual Learning</span>
+        <span class="skill-pill level-3">Explainable AI (XAI)</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:1rem;color:var(--green);">Bioprocess & Food Science</h4>
+      <div class="skills-cloud">
+        <span class="skill-pill level-3">Bioprocess Analytics</span>
+        <span class="skill-pill level-3">Process Monitoring & Control</span>
+        <span class="skill-pill level-2">Process Modeling</span>
+        <span class="skill-pill level-2">Digital Twins</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:1rem;color:var(--green);">Optimization & Computing</h4>
+      <div class="skills-cloud">
+        <span class="skill-pill level-3">Operations Research</span>
+        <span class="skill-pill level-3">Production Scheduling</span>
+        <span class="skill-pill level-2">Simulation</span>
+        <span class="skill-pill level-2">MILP / Metaheuristics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--bg2);max-width:100%;padding:6rem 0;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 5rem;">
+    <div class="reveal">
+      <p class="sec-label">06 — Contact</p>
+      <h2 class="sec-title">Let's Connect</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-text reveal-left">
+        <p>I am open to research collaborations, joint grant proposals, 
+          and any exciting project at the interface of AI, bioprocess engineering, 
+          and sustainable bioeconomy. Don't hesitate to reach out!</p>
+        <div class="contact-links">
+          <a href="https://scholar.google.com/citations?user=-sM9QXkAAAAJ&hl=en" target="_blank" class="clink">
+            <div class="clink-icon">🎓</div><span>Google Scholar</span>
+          </a>
+          <a href="https://www.researchgate.net/profile/Majhar-Babor" target="_blank" class="clink">
+            <div class="clink-icon">🔬</div><span>ResearchGate</span>
+          </a>
+          <a href="https://orcid.org/0000-0002-5440-7573" target="_blank" class="clink">
+            <div class="clink-icon">🆔</div><span>ORCID: 0000-0002-5440-7573</span>
+          </a>
+          <a href="https://www.linkedin.com/in/majharb/" target="_blank" class="clink">
+            <div class="clink-icon">💼</div><span>LinkedIn</span>
+          </a>
+          <a href="https://www.atb-potsdam.de/en/about-us/team/staff-members/person/md-majharul-islam-babor" target="_blank" class="clink">
+            <div class="clink-icon">🏛️</div><span>ATB Institute Profile</span>
+          </a>
+        </div>
+      </div>
+      <div class="contact-card reveal">
+        <h4>Currently Open To</h4>
+        <div class="avail-list">
+          <div class="avail-item"><div class="avail-dot"></div><span>Research collaborations in AI for Bioeconomy</span></div>
+          <div class="avail-item"><div class="avail-dot"></div><span>Joint grant proposals</span></div>
+          <div class="avail-item"><div class="avail-dot"></div><span>Industry partnerships in sustainable food production</span></div>
+          <div class="avail-item"><div class="avail-dot"></div><span>Student mentoring</span></div>
+        </div>
+        <div style="margin-top:1.5rem;padding:1rem;background:rgba(45,90,61,.06);border-radius:8px;border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted);margin-bottom:.3rem;">// Institution</div>
+          <div style="font-size:.88rem;color:var(--text);">Leibniz Institute for Agricultural Engineering<br>and Bioeconomy (ATB)<br>Max-Eyth-Allee 100, 14469 Potsdam, Germany</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Majhar Babor · ATB, Potsdam, Germany · © 2026</p>
+</footer>
+
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ── SCROLL REVEAL ──
+const reveals = document.querySelectorAll('.reveal,.reveal-left');
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'), i*70);
+    }
+  });
+},{threshold:0.1});
+reveals.forEach(el=>obs.observe(el));
+
+// ── COUNTER ANIMATION ──
+function animateCounter(el, targetValue){
+  const target = targetValue;
+  const dur = 1600;
+  const start = performance.now();
+  function step(now){
+    const p = Math.min((now-start)/dur,1);
+    const ease = 1-Math.pow(1-p,3);
+    el.textContent = Math.floor(ease*target).toLocaleString();
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// ── LOAD GOOGLE SCHOLAR DATA ──
+async function loadScholarData() {
+  try {
+    const response = await fetch('publications.json');
+    if (!response.ok) throw new Error('Network response was not ok');
+    const data = await response.json();
+
+    // Update stats
+    document.querySelectorAll('.stat-num[data-target]').forEach(el => {
+      const key = el.dataset.target;
+      let value = 0;
+      if (key === 'publications') value = data.publications.length;
+      if (key === 'citations') value = data.citedby;
+      if (key === 'hindex') value = data.hindex;
+      if (key === 'i10index') value = data.i10index;
+      animateCounter(el, value);
+    });
+
+    // Update inline text in about paragraph
+    if (document.getElementById('stat-pubs')) {
+      document.getElementById('stat-pubs').textContent = data.publications.length;
+      document.getElementById('stat-cites').textContent = data.citedby;
+    }
+
+    // Render publications
+    const pubList = document.getElementById('pub-list');
+    pubList.innerHTML = data.publications.map(pub => {
+      // Determine badge and tags based on title/venue keywords
+      let badgeClass = 'badge-journal';
+      let badgeText = 'Article';
+      let tags = ['journal'];  // default tag
+
+      const titleVenue = (pub.title + ' ' + pub.venue).toLowerCase();
+      if (titleVenue.includes('ssrn') || titleVenue.includes('preprint') || titleVenue.includes('arxiv')) {
+        badgeClass = 'badge-preprint';
+        badgeText = 'Preprint';
+        tags = ['preprint'];
+      } else if (titleVenue.includes('conference') || titleVenue.includes('proceedings')) {
+        badgeClass = 'badge-conf';
+        badgeText = 'Conference';
+        tags = ['conf'];
+      }
+
+      // Additional tags for filtering
+      if (titleVenue.includes('food') || titleVenue.includes('coffee') || titleVenue.includes('bakery')) tags.push('food');
+      if (titleVenue.includes('bioprocess') || titleVenue.includes('fermentation') || titleVenue.includes('lactic')) tags.push('bioprocess');
+      if (titleVenue.includes('optimization') || titleVenue.includes('scheduling') || titleVenue.includes('milp')) tags.push('optimization');
+
+      // Highlight author name
+      const authors = pub.authors.replace(/Majhar Babor/g, '<strong>Majhar Babor</strong>');
+
+      return `
+        <div class="pub-item reveal" data-tags="${tags.join(' ')}">
+          <div class="pub-year">${pub.year || 'n.d.'}</div>
+          <div>
+            <div class="pub-title">${pub.title}</div>
+            <div class="pub-authors">${authors}</div>
+            <div class="pub-venue">${pub.venue}</div>
+            <span class="pub-badge ${badgeClass}">${badgeText}</span>
+            ${pub.url ? `<a href="${pub.url}" target="_blank" class="pub-link">DOI ↗</a>` : ''}
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Re-run reveal observer for new items
+    const newReveals = document.querySelectorAll('.pub-item.reveal');
+    newReveals.forEach(el => obs.observe(el));
+
+    // Re-attach filter functionality
+    setupFilters();
+
+  } catch (error) {
+    console.error('Could not load publications.json:', error);
+    // Fallback message
+    document.getElementById('pub-list').innerHTML = '<p style="text-align:center; color:var(--muted);">Loading publications...</p>';
+  }
+}
+
+// ── PUBLICATION FILTER ──
+function setupFilters() {
+  document.querySelectorAll('.pub-filter').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.pub-filter').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      document.querySelectorAll('.pub-item').forEach(item => {
+        const tags = item.dataset.tags || '';
+        item.style.display = (filter === 'all' || tags.includes(filter)) ? 'grid' : 'none';
+      });
+    });
+  });
+}
+
+// ── BACK TO TOP ──
+const topBtn = document.getElementById('topBtn');
+window.addEventListener('scroll',()=>{
+  topBtn.classList.toggle('show', window.scrollY>400);
+  document.getElementById('nav').style.boxShadow =
+    window.scrollY>50 ? '0 4px 20px rgba(45,90,61,.1)' : 'none';
+});
+
+// ── PROSPECT CARD STAGGERED ENTRANCE ──
+const pcards = document.querySelectorAll('.prospect-card');
+const pcObs = new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>{
+        e.target.style.opacity='1';
+        e.target.style.transform='translateY(0)';
+      }, i*100);
+    }
+  });
+},{threshold:0.1});
+pcards.forEach(c=>{
+  c.style.opacity='0';
+  c.style.transform='translateY(24px)';
+  c.style.transition='opacity .6s ease, transform .6s ease';
+  pcObs.observe(c);
+});
+
+// ── INITIALISE ──
+loadScholarData();
+</script>
+</body>
+</html>

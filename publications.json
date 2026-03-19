@@ -50,7 +50,6 @@
       "citation": 11,
       "url": "https://www.sciencedirect.com/science/article/pii/S135951132400237X"
     },
-    
     {
       "title": "Chemometrics using near-infrared spectra for the quantification of robusta coffee and chicory added as adulterants in roasted arabica coffee",
       "authors": "Leah Munyendo and Majharulislam Babor and Yanyan Zhang and Bernd Hitzmann",
@@ -59,7 +58,6 @@
       "citation": 17,
       "url": "https://link.springer.com/article/10.1007/s11694-023-02188-w"
     },
-
     {
       "title": "Monitoring a Coffee Roasting Process Based on Near-Infrared and Raman Spectroscopy Coupled With Chemometrics",
       "authors": "Leah Munyendo and Katharina Schuster and Wolfgang Armbruster and Majharulislam Babor and Daniel Njoroge and Yanyan Zhang and Almut von Wrochem and Alexander Schaum and Bernd Hitzmann",
@@ -68,7 +66,6 @@
       "citation": 7,
       "url": "https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/cem.3638"
     },
-   
     {
       "title": "Online monitoring of the growth of probiotic bacteria and metabolites in the fermentation of a teff substrate using model-based calibration of 2D fluorescence spectra",
       "authors": "Sendeku Takele Alemneh and Majharulislam Babor and Viktoria Zettel and Almut von Wrochem and Bernd Hitzmann",
@@ -85,7 +82,6 @@
       "citation": 4,
       "url": "https://www.mdpi.com/2311-5637/9/2/95"
     },
-
         {
       "title": "Modeling and optimization of bakery production scheduling to minimize makespan and oven idle time",
       "authors": "Majharulislam Babor and Olivier Paquet-Durand and Reinhard Kohlus and Bernd Hitzmann",
@@ -94,7 +90,6 @@
       "citation": 14,
       "url": "https://www.nature.com/articles/s41598-022-26866-9"
     },
-
     {
       "title": "Application of nature-inspired multi-objective optimization algorithms to improve the bakery production efficiency",
       "authors": "Majharulislam Babor, Bernd Hitzmann",
@@ -103,7 +98,6 @@
       "citation": 3,
       "url": "https://www.mdpi.com/2673-4591/19/1/31"
     },
-
     {
       "title": "Application of non-dominated sorting genetic algorithm (NSGA-II) to increase the efficiency of bakery production: a case study",
       "authors": "Majharulislam Babor and Line Pedersen and Ulla Kidmose and Olivier Paquet-Durand and Bernd Hitzmann",
@@ -136,8 +130,6 @@
       "citation": 27,
       "url": "https://www.sciencedirect.com/science/article/pii/S1537511020302166"
     },
-    
-    
     {
       "title": "Application of nature-inspired optimization algorithms to improve the production efficiency of small and medium-sized bakeries",
       "authors": "Md Majharul Islam Babor",
@@ -162,7 +154,6 @@
       "citation": 2,
       "url": "https://doi.org/10.17632/dhgbssb8ns.1"
     },
-
     {
       "title": "Production data from a small bakery manufacturing line",
       "authors": "Majharulislam Babor and Bernd Hitzmann",
@@ -171,6 +162,5 @@
       "citation": 0,
       "url": "https://doi.org/10.17632/7x5t3rxx5f.1"
     }
-    
   ]
 }

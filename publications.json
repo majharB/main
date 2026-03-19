@@ -21,7 +21,7 @@
         {
       "title": "LeafTrackNet: A Deep Learning Framework for Robust Leaf Tracking in Top-Down Plant Phenotyping",
       "authors": "Shanghua Liu and Majharulislam Babor and Christoph Verduyn and Breght Vandenberghe and Bruno Betoni Parodi and Cornelia Weltzien and Marina M-C Höhne",
-      "venue": "",
+      "venue": "NeurIPS, AI4Science workshop",
       "year": "2025",
       "citation": 0,
       "url": "https://arxiv.org/abs/2512.13130"
@@ -29,7 +29,7 @@
      {
       "title": "Convergence of Digital Twins and food drying technology: How to bring the next generation of dryers to life!?",
       "authors": "Arman Arefi and Carlos Vilas and Mulugeta Admasu Delele and Petra Foerst and Sebastian Gruber and Mohammad Kaveh and Farhad Khoshanam and Norhashila Hashim and Maimunah Mohd Ali and Saman Zohrabi and Mohammed Tayyab and Aditya Parmar and Pramod Aradwad and John Ndisya and Waseem Amjad and Majharulislam Babor and Annika Mahn and Barbara Sturm",
-      "venue": "",
+      "venue": "Journal of Food Engineering",
       "year": "2025",
       "citation": 7,
       "url": "https://www.sciencedirect.com/science/article/pii/S026087742500305X"
@@ -37,16 +37,16 @@
  {
       "title": "Digital model of biochemical reactions in lactic acid bacterial fermentation of simple glucose and biowaste substrates",
       "authors": "Arman Arefi and Barbara Sturm and Majharulislam Babor and Michael Horf and Thomas Hoffmann and Marina Höhne and Kathleen Friedrich and Linda Schroedter and Joachim Venus and Agata Olszewska-Widdrat",
-      "venue": "",
-      "year": "",
+      "venue": "Heliyon",
+      "year": "2024",
       "citation": 7,
       "url": "https://www.cell.com/heliyon/fulltext/S2405-8440(24)14822-0"
     },
     {
       "title": "A mathematical model-based evaluation of yeast extract’s effects on microbial growth and substrate consumption for lactic acid production by Bacillus coagulans",
       "authors": "Agata Olszewska-Widdrat and Majharulislam Babor and Marina M-C Hoehne and Maria Alexandri and Jose Pablo Lopez-Gomez and Joachim Venus",
-      "venue": "",
-      "year": "",
+      "venue": "Process Biochemistry",
+      "year": "2024",
       "citation": 11,
       "url": "https://www.sciencedirect.com/science/article/pii/S135951132400237X"
     },
@@ -54,60 +54,17 @@
     {
       "title": "Chemometrics using near-infrared spectra for the quantification of robusta coffee and chicory added as adulterants in roasted arabica coffee",
       "authors": "Leah Munyendo and Majharulislam Babor and Yanyan Zhang and Bernd Hitzmann",
-      "venue": "",
-      "year": "",
+      "venue": " Journal of Food Measurement and Characterization",
+      "year": "2024",
       "citation": 17,
       "url": "https://link.springer.com/article/10.1007/s11694-023-02188-w"
     },
-    
-    {
-      "title": "Traceability of sweeteners in soy yogurt using linear discriminant analysis of physicochemical and sensory parameters",
-      "authors": "Md Rahmatuzzaman Rana and Majharulislam Babor and Ashfak Ahmed Sabuz",
-      "venue": "",
-      "year": "",
-      "citation": 37,
-      "url": "https://www.sciencedirect.com/science/article/pii/S2666154321000570"
-    },
-    {
-      "title": "Model-based calibration of a gas sensor array for on-line monitoring of ethanol concentration in Saccharomyces cerevisiae batch cultivation",
-      "authors": "Abdolrahim Yousefi-Darani and Majharulislam Babor and Olivier Paquet-Durand and Bernd Hitzmann",
-      "venue": "",
-      "year": "",
-      "citation": 27,
-      "url": "https://www.sciencedirect.com/science/article/pii/S1537511020302166"
-    },
-    {
-      "title": "Optimization of No-Wait Flowshop Scheduling Problem in Bakery Production with Modified PSO, NEH and SA",
-      "authors": "M Babor and J Senge and C M Rosell and D Rodrigo and B Hitzmann",
-      "venue": "",
-      "year": "",
-      "citation": 23,
-      "url": "https://www.mdpi.com/2227-9717/9/11/2044"
-    },
-    {
-      "title": "Application of non-dominated sorting genetic algorithm (NSGA-II) to increase the efficiency of bakery production: a case study",
-      "authors": "Majharulislam Babor and Line Pedersen and Ulla Kidmose and Olivier Paquet-Durand and Bernd Hitzmann",
-      "venue": "",
-      "year": "",
-      "citation": 21,
-      "url": "https://www.mdpi.com/2227-9717/10/8/1623"
-    },
-    
-    {
-      "title": "Modeling and optimization of bakery production scheduling to minimize makespan and oven idle time",
-      "authors": "Majharulislam Babor and Olivier Paquet-Durand and Reinhard Kohlus and Bernd Hitzmann",
-      "venue": "",
-      "year": "",
-      "citation": 14,
-      "url": "https://www.nature.com/articles/s41598-022-26866-9"
-    },
-    
-   
+
     {
       "title": "Monitoring a Coffee Roasting Process Based on Near-Infrared and Raman Spectroscopy Coupled With Chemometrics",
       "authors": "Leah Munyendo and Katharina Schuster and Wolfgang Armbruster and Majharulislam Babor and Daniel Njoroge and Yanyan Zhang and Almut von Wrochem and Alexander Schaum and Bernd Hitzmann",
-      "venue": "",
-      "year": "",
+      "venue": "Journal of Chemometrics",
+      "year": "2024",
       "citation": 7,
       "url": "https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/cem.3638"
     },
@@ -115,59 +72,105 @@
     {
       "title": "Online monitoring of the growth of probiotic bacteria and metabolites in the fermentation of a teff substrate using model-based calibration of 2D fluorescence spectra",
       "authors": "Sendeku Takele Alemneh and Majharulislam Babor and Viktoria Zettel and Almut von Wrochem and Bernd Hitzmann",
-      "venue": "",
-      "year": "",
+      "venue": "Microorganisms",
+      "year": "2023",
       "citation": 4,
       "url": "https://www.mdpi.com/2076-2607/11/4/1032"
     },
     {
       "title": "Online process state estimation for Hansenula Polymorpha cultivation with 2D fluorescence spectra-based Chemometric model calibrated from a theoretical model in place of offline measurements",
       "authors": "Majharulislam Babor and Olivier Paquet-Durand and Christoph Berg and Jochen Büchs and Bernd Hitzmann",
-      "venue": "",
-      "year": "",
+      "venue": "Fermentation",
+      "year": "2023",
       "citation": 4,
       "url": "https://www.mdpi.com/2311-5637/9/2/95"
     },
-    {
-      "title": "Application of nature-inspired multi-objective optimization algorithms to improve the bakery production efficiency",
-      "authors": "Majharulislam Babor and Bernd Hitzmann",
-      "venue": "",
-      "year": "",
-      "citation": 3,
-      "url": "https://www.mdpi.com/2673-4591/19/1/31"
-    },
-    {
-      "title": "Small and medium-sized bakery production data for scheduling",
-      "authors": "Majharulislam Babor and Bernd Hitzmann",
-      "venue": "",
-      "year": "",
-      "citation": 2,
-      "url": "https://scholar.google.com/scholar?cluster=8097021743079419781&hl=en&oi=scholarr"
+
+        {
+      "title": "Modeling and optimization of bakery production scheduling to minimize makespan and oven idle time",
+      "authors": "Majharulislam Babor and Olivier Paquet-Durand and Reinhard Kohlus and Bernd Hitzmann",
+      "venue": "Scientific Reports",
+      "year": "2023",
+      "citation": 14,
+      "url": "https://www.nature.com/articles/s41598-022-26866-9"
     },
 
     {
-      "title": "AdaptFerm: Bioprocess Monitoring Using FTIR spectroscopy: Insights into Substrate Effects and Domain Adaptation",
-      "authors": "Arman Arefi and Majharulislam Babor and Shanghua Liu and Marina M.-C. Höhne and Barbara Sturm and Pablo Gómez and Joachim Venus and Agata Olszewska-Widdrat",
-      "venue": "",
-      "year": "",
-      "citation": 0,
-      "url": ""
+      "title": "Application of nature-inspired multi-objective optimization algorithms to improve the bakery production efficiency",
+      "authors": "Majharulislam Babor, Bernd Hitzmann",
+      "venue": "Engineering Proceedings",
+      "year": "2022",
+      "citation": 3,
+      "url": "https://www.mdpi.com/2673-4591/19/1/31"
     },
+
+    {
+      "title": "Application of non-dominated sorting genetic algorithm (NSGA-II) to increase the efficiency of bakery production: a case study",
+      "authors": "Majharulislam Babor and Line Pedersen and Ulla Kidmose and Olivier Paquet-Durand and Bernd Hitzmann",
+      "venue": "Processes",
+      "year": "2022",
+      "citation": 21,
+      "url": "https://www.mdpi.com/2227-9717/10/8/1623"
+    },
+    {
+      "title": "Traceability of sweeteners in soy yogurt using linear discriminant analysis of physicochemical and sensory parameters",
+      "authors": "Md Rahmatuzzaman Rana and Majharulislam Babor and Ashfak Ahmed Sabuz",
+      "venue": "Journal of Agriculture and Food Research",
+      "year": "2021",
+      "citation": 37,
+      "url": "https://www.sciencedirect.com/science/article/pii/S2666154321000570"
+    },
+    {
+      "title": "Optimization of No-Wait Flowshop Scheduling Problem in Bakery Production with Modified PSO, NEH and SA",
+      "authors": "M Babor and J Senge and C M Rosell and D Rodrigo and B Hitzmann",
+      "venue": "Processes",
+      "year": "2021",
+      "citation": 23,
+      "url": "https://www.mdpi.com/2227-9717/9/11/2044"
+    },
+    {
+      "title": "Model-based calibration of a gas sensor array for on-line monitoring of ethanol concentration in Saccharomyces cerevisiae batch cultivation",
+      "authors": "Abdolrahim Yousefi-Darani and Majharulislam Babor and Olivier Paquet-Durand and Bernd Hitzmann",
+      "venue": "Biosystems Engineering",
+      "year": "2020",
+      "citation": 27,
+      "url": "https://www.sciencedirect.com/science/article/pii/S1537511020302166"
+    },
+    
+    
     {
       "title": "Application of nature-inspired optimization algorithms to improve the production efficiency of small and medium-sized bakeries",
       "authors": "Md Majharul Islam Babor",
-      "venue": "",
-      "year": "",
+      "venue": "University of Hohenheim",
+      "year": "2023",
       "citation": 0,
       "url": "http://opus.uni-hohenheim.de/frontdoor.php?source_opus=2166&la=de"
     },
     {
+      "title": "AdaptFerm: Bioprocess Monitoring Using FTIR spectroscopy: Insights into Substrate Effects and Domain Adaptation",
+      "authors": "Arman Arefi and Majharulislam Babor and Shanghua Liu and Marina M.-C. Höhne and Barbara Sturm and Pablo Gómez and Joachim Venus and Agata Olszewska-Widdrat",
+      "venue": "Zenodo",
+      "year": "2024",
+      "citation": 0,
+      "url": "https://doi.org/10.5281/zenodo.14171427"
+    },
+    {
+      "title": "Small and medium-sized bakery production data for scheduling",
+      "authors": "Majharulislam Babor and Bernd Hitzmann",
+      "venue": "Mendeley Data",
+      "year": "2022",
+      "citation": 2,
+      "url": "https://doi.org/10.17632/dhgbssb8ns.1"
+    },
+
+    {
       "title": "Production data from a small bakery manufacturing line",
       "authors": "Majharulislam Babor and Bernd Hitzmann",
-      "venue": "",
-      "year": "",
+      "venue": "Mendeley Data",
+      "year": "2022",
       "citation": 0,
-      "url": ""
+      "url": "https://doi.org/10.17632/7x5t3rxx5f.1"
     }
+    
   ]
 }

@@ -11,6 +11,56 @@
   "i10index": 7,
   "publications": [
     {
+      "title": "Interpretable domain adaptation enables robust lactic acid fermentation monitoring from waste",
+      "authors": "Majharulislam Babor and Shanghua Liu and Arman Arefi and Agata Olszewska-Widdrat and Barbara Sturm and Joachi Venus and Marina M-C Höhne",
+      "venue": "Results in Engineering",
+      "year": "2025",
+      "citation": 1,
+      "url": "https://doi.org/10.1016/j.rineng.2025.108477"
+    },
+        {
+      "title": "LeafTrackNet: A Deep Learning Framework for Robust Leaf Tracking in Top-Down Plant Phenotyping",
+      "authors": "Shanghua Liu and Majharulislam Babor and Christoph Verduyn and Breght Vandenberghe and Bruno Betoni Parodi and Cornelia Weltzien and Marina M-C Höhne",
+      "venue": "",
+      "year": "2025",
+      "citation": 0,
+      "url": "https://arxiv.org/abs/2512.13130"
+    },
+     {
+      "title": "Convergence of Digital Twins and food drying technology: How to bring the next generation of dryers to life!?",
+      "authors": "Arman Arefi and Carlos Vilas and Mulugeta Admasu Delele and Petra Foerst and Sebastian Gruber and Mohammad Kaveh and Farhad Khoshanam and Norhashila Hashim and Maimunah Mohd Ali and Saman Zohrabi and Mohammed Tayyab and Aditya Parmar and Pramod Aradwad and John Ndisya and Waseem Amjad and Majharulislam Babor and Annika Mahn and Barbara Sturm",
+      "venue": "",
+      "year": "2025",
+      "citation": 7,
+      "url": "https://www.sciencedirect.com/science/article/pii/S026087742500305X"
+    },
+ {
+      "title": "Digital model of biochemical reactions in lactic acid bacterial fermentation of simple glucose and biowaste substrates",
+      "authors": "Arman Arefi and Barbara Sturm and Majharulislam Babor and Michael Horf and Thomas Hoffmann and Marina Höhne and Kathleen Friedrich and Linda Schroedter and Joachim Venus and Agata Olszewska-Widdrat",
+      "venue": "",
+      "year": "",
+      "citation": 7,
+      "url": "https://www.cell.com/heliyon/fulltext/S2405-8440(24)14822-0"
+    },
+    {
+      "title": "A mathematical model-based evaluation of yeast extract’s effects on microbial growth and substrate consumption for lactic acid production by Bacillus coagulans",
+      "authors": "Agata Olszewska-Widdrat and Majharulislam Babor and Marina M-C Hoehne and Maria Alexandri and Jose Pablo Lopez-Gomez and Joachim Venus",
+      "venue": "",
+      "year": "",
+      "citation": 11,
+      "url": "https://www.sciencedirect.com/science/article/pii/S135951132400237X"
+    },
+    
+    {
+      "title": "Chemometrics using near-infrared spectra for the quantification of robusta coffee and chicory added as adulterants in roasted arabica coffee",
+      "authors": "Leah Munyendo and Majharulislam Babor and Yanyan Zhang and Bernd Hitzmann",
+      "venue": "",
+      "year": "",
+      "citation": 17,
+      "url": "https://link.springer.com/article/10.1007/s11694-023-02188-w"
+    },
+    
+    {
       "title": "Traceability of sweeteners in soy yogurt using linear discriminant analysis of physicochemical and sensory parameters",
       "authors": "Md Rahmatuzzaman Rana and Majharulislam Babor and Ashfak Ahmed Sabuz",
       "venue": "",
@@ -42,14 +92,7 @@
       "citation": 21,
       "url": "https://www.mdpi.com/2227-9717/10/8/1623"
     },
-    {
-      "title": "Chemometrics using near-infrared spectra for the quantification of robusta coffee and chicory added as adulterants in roasted arabica coffee",
-      "authors": "Leah Munyendo and Majharulislam Babor and Yanyan Zhang and Bernd Hitzmann",
-      "venue": "",
-      "year": "",
-      "citation": 17,
-      "url": "https://link.springer.com/article/10.1007/s11694-023-02188-w"
-    },
+    
     {
       "title": "Modeling and optimization of bakery production scheduling to minimize makespan and oven idle time",
       "authors": "Majharulislam Babor and Olivier Paquet-Durand and Reinhard Kohlus and Bernd Hitzmann",
@@ -58,22 +101,8 @@
       "citation": 14,
       "url": "https://www.nature.com/articles/s41598-022-26866-9"
     },
-    {
-      "title": "A mathematical model-based evaluation of yeast extract’s effects on microbial growth and substrate consumption for lactic acid production by Bacillus coagulans",
-      "authors": "Agata Olszewska-Widdrat and Majharulislam Babor and Marina M-C Hoehne and Maria Alexandri and Jose Pablo Lopez-Gomez and Joachim Venus",
-      "venue": "",
-      "year": "",
-      "citation": 11,
-      "url": "https://www.sciencedirect.com/science/article/pii/S135951132400237X"
-    },
-    {
-      "title": "Convergence of Digital Twins and food drying technology: How to bring the next generation of dryers to life!?",
-      "authors": "Arman Arefi and Carlos Vilas and Mulugeta Admasu Delele and Petra Foerst and Sebastian Gruber and Mohammad Kaveh and Farhad Khoshanam and Norhashila Hashim and Maimunah Mohd Ali and Saman Zohrabi and Mohammed Tayyab and Aditya Parmar and Pramod Aradwad and John Ndisya and Waseem Amjad and Majharulislam Babor and Annika Mahn and Barbara Sturm",
-      "venue": "",
-      "year": "",
-      "citation": 7,
-      "url": "https://www.sciencedirect.com/science/article/pii/S026087742500305X"
-    },
+    
+   
     {
       "title": "Monitoring a Coffee Roasting Process Based on Near-Infrared and Raman Spectroscopy Coupled With Chemometrics",
       "authors": "Leah Munyendo and Katharina Schuster and Wolfgang Armbruster and Majharulislam Babor and Daniel Njoroge and Yanyan Zhang and Almut von Wrochem and Alexander Schaum and Bernd Hitzmann",
@@ -82,14 +111,7 @@
       "citation": 7,
       "url": "https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/cem.3638"
     },
-    {
-      "title": "Digital model of biochemical reactions in lactic acid bacterial fermentation of simple glucose and biowaste substrates",
-      "authors": "Arman Arefi and Barbara Sturm and Majharulislam Babor and Michael Horf and Thomas Hoffmann and Marina Höhne and Kathleen Friedrich and Linda Schroedter and Joachim Venus and Agata Olszewska-Widdrat",
-      "venue": "",
-      "year": "",
-      "citation": 7,
-      "url": "https://www.cell.com/heliyon/fulltext/S2405-8440(24)14822-0"
-    },
+   
     {
       "title": "Online monitoring of the growth of probiotic bacteria and metabolites in the fermentation of a teff substrate using model-based calibration of 2D fluorescence spectra",
       "authors": "Sendeku Takele Alemneh and Majharulislam Babor and Viktoria Zettel and Almut von Wrochem and Bernd Hitzmann",
@@ -122,22 +144,7 @@
       "citation": 2,
       "url": "https://scholar.google.com/scholar?cluster=8097021743079419781&hl=en&oi=scholarr"
     },
-    {
-      "title": "Domain-Invariant Monitoring for Lactic Acid Production: Transfer Learning from Glucose to Bio-Waste Using Machine Learning Interpretation",
-      "authors": "Majharulislam Babor and Shanghua Liu and Arman Arefi and Agata Olszewska-Widdrat and Barbara Sturm and Joachi Venus and Marina M-C Höhne",
-      "venue": "",
-      "year": "",
-      "citation": 1,
-      "url": ""
-    },
-    {
-      "title": "LeafTrackNet: A Deep Learning Framework for Robust Leaf Tracking in Top-Down Plant Phenotyping",
-      "authors": "Shanghua Liu and Majharulislam Babor and Christoph Verduyn and Breght Vandenberghe and Bruno Betoni Parodi and Cornelia Weltzien and Marina M-C Höhne",
-      "venue": "",
-      "year": "",
-      "citation": 0,
-      "url": "https://arxiv.org/abs/2512.13130"
-    },
+
     {
       "title": "AdaptFerm: Bioprocess Monitoring Using FTIR spectroscopy: Insights into Substrate Effects and Domain Adaptation",
       "authors": "Arman Arefi and Majharulislam Babor and Shanghua Liu and Marina M.-C. Höhne and Barbara Sturm and Pablo Gómez and Joachim Venus and Agata Olszewska-Widdrat",

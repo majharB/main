@@ -24,12 +24,16 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
 
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Outfit',sans-serif;
-    overflow-x:hidden;
-  }
+  
+  body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+
+  text-align: justify;
+  text-justify: inter-word;
+}
 
   /* ── TEXTURE OVERLAY ── */
   body::before{
@@ -178,6 +182,8 @@
     border-radius:2px;margin-bottom:3rem;
   }
 
+
+  
   /* ── ABOUT ── */
   .about-grid{
   display:flex;
